@@ -1,18 +1,16 @@
 package fr.amu.jdbc;
 
-import fr.amu.jdbc.model.Etudiant;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
-public class TestConnexion {
+public class TestEntite {
 
     // La requête de test
 
-    static final String req = "SELECT * FROM ETUDIANT";
+    static final String req = "SELECT NUM_ET, NOM_ET, PRENOM_ET " + "FROM ETUDIANT "
+            + "WHERE VILLE_ET = 'AIX-EN-PROVENCE'";
 
     public static void main(String[] args) throws SQLException {
         // Objet materialisant la connexion à la base de données
@@ -28,28 +26,16 @@ public class TestConnexion {
             // Execution de la requete
             System.out.println("Exécution de la requête : " + req + "\n");
             ResultSet rset = stmt.executeQuery(req);
-            
-            List<Etudiant> etudiants = new ArrayList<>();
 
             // Affichage du résultat
             while (rset.next()) {
-                Etudiant et = new Etudiant();
-                
-                et.setNumEt(rset.getInt("NUM_ET"));
-                et.setNomEt(rset.getString("NOM_ET"));
-                et.setPrenomEt(rset.getString("PRENOM_ET"));
-                et.setGroupe(rset.getInt("GROUPE"));
-                et.setCpEt(rset.getString("CP_ET"));
-                et.setAnnee(rset.getInt("ANNEE"));
-                et.setVilleEt(rset.getString("VILLE_ET"));
-                
-                etudiants.add(et);
+                System.out.print(rset.getInt("NUM_ET") + " ");
+                System.out.print(rset.getString("NOM_ET") + " ");
+                System.out.println(rset.getString("PRENOM_ET"));
             }
             // Fermeture de l'instruction (libération des ressources)
             stmt.close();
             System.out.println("\nOk.\n");
-            
-            System.out.println(etudiants);
 
         } catch (Exception e) {
             e.printStackTrace();// Arggg!!!
