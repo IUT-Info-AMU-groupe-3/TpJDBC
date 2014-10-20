@@ -5,7 +5,10 @@
  */
 package fr.amu.jdbc.model;
 
+import fr.amu.jdbc.assoc.Enseignement;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  *
@@ -23,6 +26,17 @@ public class Module {
     private int coefCc;
     /*private Prof responsable;
     private Module pere;*/
+    
+    final private Set<Enseignement> enseignements = new HashSet<>(); //A1
+
+    public Set<Enseignement> getEnseignements() {
+        return enseignements;
+    }
+    
+    public void addEnseignement(Enseignement e){
+        enseignements.add(e);
+    }
+
 
     /*public Module getPere() {
         return pere;

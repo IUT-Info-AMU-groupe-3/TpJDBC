@@ -5,6 +5,10 @@
  */
 package fr.amu.jdbc.model;
 
+import fr.amu.jdbc.assoc.Enseignement;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author q13000412
@@ -17,6 +21,16 @@ public class Prof {
     private String cpProf;
     private String villeProf;
     private Module specialite;
+    
+    final private Set<Enseignement> enseignements = new HashSet<>(); //A2
+
+    public Set<Enseignement> getEnseignements() {
+        return enseignements;
+    }
+    
+    public void addEnseignement(Enseignement e){
+        enseignements.add(e);
+    }
 
     public Module getSpecialite() {
         return specialite;

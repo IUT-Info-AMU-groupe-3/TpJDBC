@@ -5,6 +5,10 @@
  */
 package fr.amu.jdbc.model;
 
+import fr.amu.jdbc.assoc.Enseignement;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author q13000412
@@ -17,6 +21,8 @@ public class Etudiant {
     private String villeEt;
     private int annee;
     private int groupe;
+    
+    final private Set<Enseignement> enseignements = new HashSet<>(); //A3
 
     public int getNumEt() {
         return numEt;
@@ -72,6 +78,14 @@ public class Etudiant {
 
     public void setGroupe(int groupe) {
         this.groupe = groupe;
+    }
+
+    public Set<Enseignement> getEnseignements() {
+        return enseignements;
+    }
+    
+    public void addEnseignement(Enseignement enseignement){
+        enseignements.add(enseignement);
     }
 
     @Override
