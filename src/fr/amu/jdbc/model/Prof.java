@@ -16,6 +16,15 @@ public class Prof {
     private String adrProf;
     private String cpProf;
     private String villeProf;
+    private Module specialite;
+
+    public Module getSpecialite() {
+        return specialite;
+    }
+
+    public void setSpecialite(Module specialite) {
+        this.specialite = specialite;
+    }
 
     public int getNumProf() {
         return numProf;
@@ -67,7 +76,7 @@ public class Prof {
 
     @Override
     public String toString() {
-        return "Prof{" + "numProf=" + numProf + ", nomProf=" + nomProf + ", prenomProf=" + prenomProf + ", adrProf=" + adrProf + ", cpProf=" + cpProf + ", villeProf=" + villeProf + '}';
+        return "Prof{" + "numProf=" + numProf + ", nomProf=" + nomProf + ", prenomProf=" + prenomProf + ", adrProf=" + adrProf + ", cpProf=" + cpProf + ", villeProf=" + villeProf + ", specialite=" + specialite + '}';
     }
     
 }

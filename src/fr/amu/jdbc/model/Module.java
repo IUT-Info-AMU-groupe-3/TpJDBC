@@ -16,9 +16,27 @@ public class Module {
     private int hCoursRea;
     private int hTpPrev;
     private int hTpRea;
-    private String dicipline;
+    private String discipline;
     private int coefTest;
     private int coefCc;
+    private Prof responsable;
+    private Module pere;
+
+    public Module getPere() {
+        return pere;
+    }
+
+    public void setPere(Module pere) {
+        this.pere = pere;
+    }
+
+    public Prof getResponsable() {
+        return responsable;
+    }
+
+    public void setResponsable(Prof responsable) {
+        this.responsable = responsable;
+    }
 
     public String getCode() {
         return code;
@@ -68,12 +86,12 @@ public class Module {
         this.hTpRea = hTpRea;
     }
 
-    public String getDicipline() {
-        return dicipline;
+    public String getDiscipline() {
+        return discipline;
     }
 
-    public void setDicipline(String dicipline) {
-        this.dicipline = dicipline;
+    public void setDiscipline(String discipline) {
+        this.discipline = discipline;
     }
 
     public int getCoefTest() {
@@ -94,8 +112,6 @@ public class Module {
 
     @Override
     public String toString() {
-        return "Module{" + "code=" + code + ", libelle=" + libelle + ", hCoursPrev=" + hCoursPrev + ", hCoursRea=" + hCoursRea + ", hTpPrev=" + hTpPrev + ", hTpRea=" + hTpRea + ", dicipline=" + dicipline + ", coefTest=" + coefTest + ", coefCc=" + coefCc + '}';
+        return "Module{" + "code=" + code + ", libelle=" + libelle + ", hCoursPrev=" + hCoursPrev + ", hCoursRea=" + hCoursRea + ", hTpPrev=" + hTpPrev + ", hTpRea=" + hTpRea + ", discipline=" + discipline + ", coefTest=" + coefTest + ", coefCc=" + coefCc + ", responsable=" + responsable + ", pere=" + pere + '}';
     }
-    
-    
 }
