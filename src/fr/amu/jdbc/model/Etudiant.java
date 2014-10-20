@@ -78,4 +78,26 @@ public class Etudiant {
     public String toString() {
         return "Etudiant{" + "numEt=" + numEt + ", nomEt=" + nomEt + ", prenomEt=" + prenomEt + ", cpEt=" + cpEt + ", villeEt=" + villeEt + ", annee=" + annee + ", groupe=" + groupe + '}';
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 17 * hash + this.numEt;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Etudiant other = (Etudiant) obj;
+        if (this.numEt != other.numEt) {
+            return false;
+        }
+        return true;
+    }
 }

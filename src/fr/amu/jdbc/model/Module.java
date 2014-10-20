@@ -5,6 +5,8 @@
  */
 package fr.amu.jdbc.model;
 
+import java.util.Objects;
+
 /**
  *
  * @author q13000412
@@ -19,10 +21,10 @@ public class Module {
     private String discipline;
     private int coefTest;
     private int coefCc;
-    private Prof responsable;
-    private Module pere;
+    /*private Prof responsable;
+    private Module pere;*/
 
-    public Module getPere() {
+    /*public Module getPere() {
         return pere;
     }
 
@@ -36,7 +38,7 @@ public class Module {
 
     public void setResponsable(Prof responsable) {
         this.responsable = responsable;
-    }
+    }*/
 
     public String getCode() {
         return code;
@@ -112,6 +114,28 @@ public class Module {
 
     @Override
     public String toString() {
-        return "Module{" + "code=" + code + ", libelle=" + libelle + ", hCoursPrev=" + hCoursPrev + ", hCoursRea=" + hCoursRea + ", hTpPrev=" + hTpPrev + ", hTpRea=" + hTpRea + ", discipline=" + discipline + ", coefTest=" + coefTest + ", coefCc=" + coefCc + ", responsable=" + responsable + ", pere=" + pere + '}';
+        return "Module{" + "code=" + code + ", libelle=" + libelle + ", hCoursPrev=" + hCoursPrev + ", hCoursRea=" + hCoursRea + ", hTpPrev=" + hTpPrev + ", hTpRea=" + hTpRea + ", discipline=" + discipline + ", coefTest=" + coefTest + ", coefCc=" + coefCc + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 59 * hash + Objects.hashCode(this.code);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Module other = (Module) obj;
+        if (!Objects.equals(this.code, other.code)) {
+            return false;
+        }
+        return true;
     }
 }
