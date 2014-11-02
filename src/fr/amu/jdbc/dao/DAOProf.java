@@ -6,19 +6,17 @@
 
 package fr.amu.jdbc.dao;
 
-import fr.amu.jdbc.dao.impl.DAOModuleI;
-import fr.amu.jdbc.model.Module;
+import fr.amu.jdbc.dao.impl.DAOProfI;
+import fr.amu.jdbc.model.Prof;
 
 /**
  *
  * @author Vincent Quatrevieux <quatrevieux.vincent@gmail.com>
  */
-public abstract class DAOModule implements DAO<Module>{
-    final static private DAOModule instance = new DAOModuleI();
-    
-    abstract public Module getByCode(String code);
+public abstract class DAOProf implements DAO<Prof> {
+    final static private DAOProf instance = new DAOProfI();
 
-    public static DAOModule getInstance() {
+    public static DAOProf getInstance() {
         return instance;
     }
 }
