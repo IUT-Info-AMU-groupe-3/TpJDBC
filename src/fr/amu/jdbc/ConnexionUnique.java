@@ -16,12 +16,12 @@ import java.sql.SQLException;
 public class ConnexionUnique {
     final static private ConnexionUnique instance = new ConnexionUnique();
     final private Connection connection;
-    final static private String CONNECT_URL = "jdbc:mysql://127.0.0.1/yolo";
+    final static private String CONNECT_URL = "jdbc:mysql://127.0.0.1/tpjdbc";
 
     private ConnexionUnique() {
         Connection conn = null;
         try{
-            conn = DriverManager.getConnection(CONNECT_URL, "root", "mysql");
+            conn = DriverManager.getConnection(CONNECT_URL, "jdbc", "");
         }catch(SQLException ex){
             ex.printStackTrace();
         }
